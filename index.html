@@ -10,23 +10,19 @@
 
     <style>
       :root {
+        --bg: #ffffff;
         --text: #111;
         --muted: #666;
         --accent: #000;
+        --card: #f3f3f3;
       }
 
-      @page {
-        size: A4;
-        margin: 0;
-      }
-
-      @media print {
-        .toolbar {
-          display: none;
-        }
-        body {
-          margin: 12mm;
-        }
+      body.dark {
+        --bg: #0e0e0e;
+        --text: #f5f5f5;
+        --muted: #aaa;
+        --accent: #fff;
+        --card: #1a1a1a;
       }
 
       body {
@@ -35,8 +31,9 @@
         margin: 40px auto;
         padding: 0 24px;
         color: var(--text);
+        background: var(--bg);
         line-height: 1.55;
-        background: white;
+        transition: 0.2s;
       }
 
       h1 {
@@ -81,7 +78,7 @@
 
       .skills span {
         display: inline-block;
-        background: #f3f3f3;
+        background: var(--card);
         padding: 5px 9px;
         margin: 4px;
         border-radius: 6px;
@@ -113,15 +110,23 @@
         position: fixed;
         top: 20px;
         right: 20px;
+        display: flex;
+        gap: 6px;
       }
 
       .toolbar button {
-        padding: 6px 12px;
-        margin-left: 6px;
+        padding: 6px 10px;
+        font-size: 12px;
+        cursor: pointer;
       }
 
       .onepage .extra {
-        display: none;
+        display: none !important;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
       }
 
       @media print {
@@ -129,7 +134,7 @@
           display: none;
         }
         body {
-          margin: 0;
+          margin: 12mm;
         }
       }
     </style>
@@ -139,7 +144,8 @@
     <div class="toolbar">
       <button onclick="toggleLang()">EN/PT</button>
       <button onclick="toggleOnePage()">1 PAGE</button>
-      <button onclick="printPDF()">PDF</button>
+      <button onclick="toggleDark()">🌙</button>
+      <button onclick="window.print()">PDF</button>
     </div>
 
     <!-- HEADER -->
@@ -147,16 +153,16 @@
       <div>
         <div class="lang-pt">
           <h1>Aurelio Miguel</h1>
-          <h2>Desenvolvedor Full Stack Sênior · Sistemas, Automação e IA</h2>
+          <h2>Desenvolvedor Full Stack Sênior</h2>
         </div>
         <div class="lang-en">
           <h1>Aurelio Miguel</h1>
-          <h2>Senior Full Stack Engineer · Systems, Automation & AI</h2>
+          <h2>Senior Full Stack Engineer</h2>
         </div>
       </div>
 
       <div class="links">
-        Remote-ready · Brazil<br />
+        Rio de Janeiro, Brazil<br />
         <a href="mailto:aureliomiguel.rj@gmail.com"
           >aureliomiguel.rj@gmail.com</a
         ><br />
@@ -173,50 +179,34 @@
       <div class="section-title lang-en">Summary</div>
 
       <p class="lang-pt">
-        Desenvolvedor Full Stack sênior com mais de 7 anos construindo,
-        modernizando e escalando sistemas web complexos. Experiência forte em
-        refatoração de plataformas legadas, automação de processos, integração
-        com IA e otimização de performance em bancos relacionais. Liderei a
-        evolução de sistemas críticos: de suporte em legado até a entrega de
-        novas arquiteturas com APIs rápidas, dashboards estratégicos, automações
-        operacionais e sistemas internos de tickets. Atuação de ponta a ponta e
-        apoio constante a outros desenvolvedores e times.
+        Engenheiro Full Stack sênior com 7+ anos reconstruindo sistemas legados,
+        criando plataformas escaláveis, integrações com IA e automações de alto
+        impacto. Atuação ponta a ponta em arquitetura, backend, frontend, mobile
+        e integrações.
       </p>
 
       <p class="lang-en">
-        Senior Full Stack Engineer with 7+ years building, modernizing and
-        scaling complex web systems. Strong background in legacy refactoring,
-        process automation, AI integrations and SQL performance optimization.
-        Led the evolution of critical platforms from legacy support to fully
-        rebuilt systems with high-performance APIs, internal dashboards,
-        automation workflows and AI integration. Work end-to-end across
-        architecture, backend, frontend and deployment while supporting multiple
-        teams and mentoring developers.
+        Senior Full Stack Engineer with 7+ years rebuilding legacy systems,
+        shipping scalable platforms, AI integrations and high-impact
+        automations. End-to-end work across architecture, backend, frontend and
+        integrations.
       </p>
     </div>
 
     <!-- SKILLS -->
     <div class="section">
-      <div class="section-title">Core Skills</div>
-
+      <div class="section-title">Skills</div>
       <div class="skills">
         <span>TypeScript</span>
         <span>Node.js</span>
         <span>Svelte</span>
         <span>React</span>
-        <span>C#</span>
         <span>.NET</span>
-        <span>Python</span>
         <span>SQL</span>
         <span>Postgres</span>
-        <span>MySQL</span>
-        <span>Oracle</span>
         <span>Docker</span>
-        <span>CI/CD</span>
         <span>N8N</span>
-        <span>Automation</span>
-        <span>OpenAI API</span>
-        <span>REST APIs</span>
+        <span>OpenAI</span>
         <span>GraphQL</span>
       </div>
     </div>
@@ -228,153 +218,131 @@
 
       <div class="job">
         <div class="company">FADAMI</div>
-        <div class="meta lang-pt">2025 – Presente</div>
-        <div class="meta lang-en">2025 – Now</div>
+        <div class="meta">2025 - Presente</div>
         <ul>
           <li class="lang-pt">
-            Desenvolvimento de sistema moderno de ocorrências em SvelteKit com
-            arquitetura modular e componentes reutilizáveis.
+            Desenvolvimento de sistema moderno de ocorrências em SvelteKit, com
+            interfaces responsivas e arquitetura de componentes reutilizáveis.
           </li>
           <li class="lang-en">
             Developed a modern incident management platform using SvelteKit with
-            modular architecture and reusable components.
+            responsive interfaces and reusable component architecture.
           </li>
 
           <li class="lang-pt">
-            Refatoração e integração de sistema legado em .NET com otimizações
-            de queries e melhorias de performance.
+            Implementação de ferramentas de monitoramento de uso por usuário:
+            relatórios, timelines e guias passo a passo para suporte e análise.
           </li>
           <li class="lang-en">
-            Refactored legacy .NET system improving SQL performance and
-            reliability.
+            Implemented user-activity monitoring tools including reports,
+            timelines and step-by-step guides for support and analysis.
           </li>
 
           <li class="lang-pt">
-            Criação de ferramentas internas de monitoramento de usuários,
-            relatórios e dashboards de suporte.
+            Refatoração e integração do sistema legado (.NET + MySQL), com
+            correção de bugs críticos, otimização de queries e melhorias de
+            performance.
           </li>
           <li class="lang-en">
-            Built internal monitoring tools, reports and support dashboards.
+            Refactored and integrated legacy systems (.NET + MySQL), fixing
+            critical bugs, optimizing queries and improving performance.
           </li>
 
           <li class="lang-pt">
-            Apoio ao pipeline de deploy, testes automatizados e melhorias
-            contínuas de qualidade.
+            Colaboração na criação de processos de testes automatizados e
+            suporte ao pipeline de deploy contínuo (CI).
           </li>
           <li class="lang-en">
-            Supported CI pipelines, automated tests and continuous quality
-            improvements.
+            Collaborated on automated testing processes and supported continuous
+            integration/deployment pipelines (CI).
           </li>
         </ul>
       </div>
 
       <div class="job">
         <div class="company">ProcessMind</div>
-        <div class="meta">2020 – 2025</div>
+        <div class="meta">2020 - 2025</div>
         <ul>
           <li class="lang-pt">
-            Iniciei dando suporte ao sistema legado e liderei sua modernização
-            completa até a entrega de nova arquitetura.
+            Evolução de sistema legado até nova plataforma com IA e automações.
           </li>
           <li class="lang-en">
-            Started supporting a legacy system and led its full modernization
-            into a new architecture.
+            Evolved legacy platform into new system with AI and automation.
           </li>
-
+          <li class="lang-pt">Otimização pesada de queries e performance.</li>
+          <li class="lang-en">Heavy SQL performance optimization.</li>
           <li class="lang-pt">
-            Entrega de nova versão da plataforma com IA integrada, automações
-            operacionais e sistema interno de tickets.
+            Reconstrução de sistema principal com automações e integrações
+            modernas.
           </li>
           <li class="lang-en">
-            Delivered rebuilt platform with AI integrations, automation
-            workflows and internal ticketing system.
+            Rebuilt core system with automation and modern integrations.
           </li>
-
           <li class="lang-pt">
-            Desenvolvimento de APIs de alta performance e otimização de queries
-            complexas em Oracle.
+            Criação de sistema de tickets e dashboards de monitoramento.
           </li>
           <li class="lang-en">
-            Built high-performance APIs and optimized complex Oracle SQL
-            queries.
-          </li>
-
-          <li class="lang-pt">
-            Criação de dashboards estratégicos e ferramentas internas para
-            gestão.
-          </li>
-          <li class="lang-en">
-            Built strategic dashboards and internal management tools.
-          </li>
-
-          <li class="lang-pt">
-            Automação de processos com N8N reduzindo trabalho manual e erros
-            operacionais.
-          </li>
-          <li class="lang-en">
-            Automated workflows with N8N reducing manual work and operational
-            errors.
-          </li>
-
-          <li class="lang-pt">
-            Apoio técnico a múltiplos times e mentoria constante a outros
-            desenvolvedores.
-          </li>
-          <li class="lang-en">
-            Provided cross-team technical support and mentored developers.
+            Built ticketing system and monitoring dashboards.
           </li>
         </ul>
       </div>
 
-      <!-- EXTRA EXPERIENCE -->
-      <div class="extra">
-        <div class="job">
-          <div class="company">Experiências anteriores</div>
-          <div class="meta">2018 – 2020</div>
-          <ul>
-            <li class="lang-pt">
-              Desenvolvimento de plataformas web, APIs, aplicações mobile e
-              integrações com dispositivos.
-            </li>
-            <li class="lang-en">
-              Developed web platforms, APIs, mobile applications and system
-              integrations.
-            </li>
-          </ul>
-        </div>
+      <div class="job extra">
+        <div class="company">Studio Prime</div>
+        <div class="meta">2018 - 2020</div>
+        <ul>
+          <li class="lang-pt">
+            Manutenção e evolução de plataforma de alta demanda e escala.
+          </li>
+          <li class="lang-en">
+            Maintained and scaled high-traffic production platform.
+          </li>
+
+          <li class="lang-pt">
+            Criação de APIs e integrações entre múltiplos sistemas.
+          </li>
+          <li class="lang-en">Built APIs and system integrations.</li>
+
+          <li class="lang-pt">
+            Desenvolvimento de apps mobile e ferramentas internas.
+          </li>
+          <li class="lang-en">Developed mobile apps and internal tools.</li>
+
+          <li class="lang-pt">
+            Desenvolvimento de dispositivo IoT de rastreamento em tempo real,
+            incluindo esquemas eletrônicos e placas de circuito.
+          </li>
+          <li class="lang-en">
+            Built real-time tracking IoT device including electronics and PCB
+            design.
+          </li>
+
+          <li class="lang-pt">
+            Projetos para clientes como Red Bull, L'Oréal, Boticário e Lindt.
+          </li>
+          <li class="lang-en">
+            Worked on projects for Red Bull, L'Oréal, Boticário and Lindt.
+          </li>
+        </ul>
       </div>
     </div>
 
-    <!-- EDUCATION -->
-    <div class="section">
-      <div class="section-title lang-pt">Formação</div>
-      <div class="section-title lang-en">Education</div>
-      <li class="lang-pt">UNESA — Análise e Desenvolvimento de Sistemas</li>
-      <li class="lang-en">UNESA — Systems Analysis and Development</li>
-    </div>
-
-    <!-- LANGUAGES -->
-    <div class="section">
-      <div class="section-title lang-pt">Idiomas</div>
-      <div class="section-title lang-en">Languages</div>
-      <li class="lang-pt">
-        Português (Nativo) · Inglês (Fluente) · Espanhol (Intermediário)
-      </li>
-      <li class="lang-en">
-        Portuguese (Native) · English (Fluent) · Spanish (Intermediate)
-      </li>
-    </div>
-
     <script>
-      function printPDF() {
-        window.print();
-      }
-
       function toggleLang() {
         document.body.classList.toggle("lang-active");
       }
+
       function toggleOnePage() {
         document.body.classList.toggle("onepage");
+      }
+
+      function toggleDark() {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("dark", document.body.classList.contains("dark"));
+      }
+
+      if (localStorage.getItem("dark") === "true") {
+        document.body.classList.add("dark");
       }
     </script>
   </body>
