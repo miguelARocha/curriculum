@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Aurelio Miguel - Resume</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --text: #111;
+        --muted: #666;
+        --accent: #000;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      @media print {
+        .toolbar {
+          display: none;
+        }
+        body {
+          margin: 12mm;
+        }
+      }
+
+      body {
+        font-family: Inter, sans-serif;
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 24px;
+        color: var(--text);
+        line-height: 1.55;
+        background: white;
+      }
+
+      h1 {
+        font-size: 32px;
+        margin-bottom: 4px;
+      }
+      h2 {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--muted);
+        margin-bottom: 18px;
+      }
+
+      .section {
+        margin-bottom: 26px;
+      }
+
+      .section-title {
+        font-weight: 700;
+        font-size: 18px;
+        border-bottom: 2px solid var(--accent);
+        margin-bottom: 10px;
+        padding-bottom: 4px;
+      }
+
+      .job {
+        margin-bottom: 18px;
+      }
+      .company {
+        font-weight: 700;
+      }
+      .meta {
+        font-size: 14px;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+
+      ul {
+        margin-left: 18px;
+        margin-top: 6px;
+      }
+
+      .skills span {
+        display: inline-block;
+        background: #f3f3f3;
+        padding: 5px 9px;
+        margin: 4px;
+        border-radius: 6px;
+        font-size: 13px;
+      }
+
+      .top {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .links {
+        text-align: right;
+        font-size: 14px;
+      }
+
+      .lang-en {
+        display: none;
+      }
+      .lang-active .lang-en {
+        display: block;
+      }
+      .lang-active .lang-pt {
+        display: none;
+      }
+
+      .toolbar {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+      }
+
+      .toolbar button {
+        padding: 6px 12px;
+        margin-left: 6px;
+      }
+
+      .onepage .extra {
+        display: none;
+      }
+
+      @media print {
+        .toolbar {
+          display: none;
+        }
+        body {
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body id="cv">
+    <div class="toolbar">
+      <button onclick="toggleLang()">EN/PT</button>
+      <button onclick="toggleOnePage()">1 PAGE</button>
+      <button onclick="printPDF()">PDF</button>
+    </div>
+
+    <!-- HEADER -->
+    <div class="top">
+      <div>
+        <div class="lang-pt">
+          <h1>Aurelio Miguel</h1>
+          <h2>Desenvolvedor Full Stack Sênior · Sistemas, Automação e IA</h2>
+        </div>
+        <div class="lang-en">
+          <h1>Aurelio Miguel</h1>
+          <h2>Senior Full Stack Engineer · Systems, Automation & AI</h2>
+        </div>
+      </div>
+
+      <div class="links">
+        Remote-ready · Brazil<br />
+        <a href="mailto:aureliomiguel.rj@gmail.com"
+          >aureliomiguel.rj@gmail.com</a
+        ><br />
+        <a href="https://github.com/miguelARocha">GitHub</a><br />
+        <a href="https://www.linkedin.com/in/aurelio-miguel-silva-09841b124/"
+          >LinkedIn</a
+        >
+      </div>
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="section">
+      <div class="section-title lang-pt">Resumo</div>
+      <div class="section-title lang-en">Summary</div>
+
+      <p class="lang-pt">
+        Desenvolvedor Full Stack sênior com mais de 7 anos construindo,
+        modernizando e escalando sistemas web complexos. Experiência forte em
+        refatoração de plataformas legadas, automação de processos, integração
+        com IA e otimização de performance em bancos relacionais. Liderei a
+        evolução de sistemas críticos: de suporte em legado até a entrega de
+        novas arquiteturas com APIs rápidas, dashboards estratégicos, automações
+        operacionais e sistemas internos de tickets. Atuação de ponta a ponta e
+        apoio constante a outros desenvolvedores e times.
+      </p>
+
+      <p class="lang-en">
+        Senior Full Stack Engineer with 7+ years building, modernizing and
+        scaling complex web systems. Strong background in legacy refactoring,
+        process automation, AI integrations and SQL performance optimization.
+        Led the evolution of critical platforms from legacy support to fully
+        rebuilt systems with high-performance APIs, internal dashboards,
+        automation workflows and AI integration. Work end-to-end across
+        architecture, backend, frontend and deployment while supporting multiple
+        teams and mentoring developers.
+      </p>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section">
+      <div class="section-title">Core Skills</div>
+
+      <div class="skills">
+        <span>TypeScript</span>
+        <span>Node.js</span>
+        <span>Svelte</span>
+        <span>React</span>
+        <span>C#</span>
+        <span>.NET</span>
+        <span>Python</span>
+        <span>SQL</span>
+        <span>Postgres</span>
+        <span>MySQL</span>
+        <span>Oracle</span>
+        <span>Docker</span>
+        <span>CI/CD</span>
+        <span>N8N</span>
+        <span>Automation</span>
+        <span>OpenAI API</span>
+        <span>REST APIs</span>
+        <span>GraphQL</span>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section">
+      <div class="section-title lang-pt">Experiência</div>
+      <div class="section-title lang-en">Experience</div>
+
+      <div class="job">
+        <div class="company">FADAMI</div>
+        <div class="meta">2025 – Presente</div>
+        <ul>
+          <li class="lang-pt">
+            Desenvolvimento de sistema moderno de ocorrências em SvelteKit com
+            arquitetura modular e componentes reutilizáveis.
+          </li>
+          <li class="lang-en">
+            Developed a modern incident management platform using SvelteKit with
+            modular architecture and reusable components.
+          </li>
+
+          <li class="lang-pt">
+            Refatoração e integração de sistema legado em .NET com otimizações
+            de queries e melhorias de performance.
+          </li>
+          <li class="lang-en">
+            Refactored legacy .NET system improving SQL performance and
+            reliability.
+          </li>
+
+          <li class="lang-pt">
+            Criação de ferramentas internas de monitoramento de usuários,
+            relatórios e dashboards de suporte.
+          </li>
+          <li class="lang-en">
+            Built internal monitoring tools, reports and support dashboards.
+          </li>
+
+          <li class="lang-pt">
+            Apoio ao pipeline de deploy, testes automatizados e melhorias
+            contínuas de qualidade.
+          </li>
+          <li class="lang-en">
+            Supported CI pipelines, automated tests and continuous quality
+            improvements.
+          </li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="company">ProcessMind</div>
+        <div class="meta">2020 – 2025</div>
+        <ul>
+          <li class="lang-pt">
+            Iniciei dando suporte ao sistema legado e liderei sua modernização
+            completa até a entrega de nova arquitetura.
+          </li>
+          <li class="lang-en">
+            Started supporting a legacy system and led its full modernization
+            into a new architecture.
+          </li>
+
+          <li class="lang-pt">
+            Entrega de nova versão da plataforma com IA integrada, automações
+            operacionais e sistema interno de tickets.
+          </li>
+          <li class="lang-en">
+            Delivered rebuilt platform with AI integrations, automation
+            workflows and internal ticketing system.
+          </li>
+
+          <li class="lang-pt">
+            Desenvolvimento de APIs de alta performance e otimização de queries
+            complexas em Oracle.
+          </li>
+          <li class="lang-en">
+            Built high-performance APIs and optimized complex Oracle SQL
+            queries.
+          </li>
+
+          <li class="lang-pt">
+            Criação de dashboards estratégicos e ferramentas internas para
+            gestão.
+          </li>
+          <li class="lang-en">
+            Built strategic dashboards and internal management tools.
+          </li>
+
+          <li class="lang-pt">
+            Automação de processos com N8N reduzindo trabalho manual e erros
+            operacionais.
+          </li>
+          <li class="lang-en">
+            Automated workflows with N8N reducing manual work and operational
+            errors.
+          </li>
+
+          <li class="lang-pt">
+            Apoio técnico a múltiplos times e mentoria constante a outros
+            desenvolvedores.
+          </li>
+          <li class="lang-en">
+            Provided cross-team technical support and mentored developers.
+          </li>
+        </ul>
+      </div>
+
+      <!-- EXTRA EXPERIENCE -->
+      <div class="extra">
+        <div class="job">
+          <div class="company">Experiências anteriores</div>
+          <div class="meta">2018 – 2020</div>
+          <ul>
+            <li class="lang-pt">
+              Desenvolvimento de plataformas web, APIs, aplicações mobile e
+              integrações com dispositivos.
+            </li>
+            <li class="lang-en">
+              Developed web platforms, APIs, mobile applications and system
+              integrations.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+      <div class="section-title lang-pt">Formação</div>
+      <div class="section-title lang-en">Education</div>
+      <li class="lang-pt">UNESA — Análise e Desenvolvimento de Sistemas</li>
+      <li class="lang-en">UNESA — Systems Analysis and Development</li>
+    </div>
+
+    <!-- LANGUAGES -->
+    <div class="section">
+      <div class="section-title lang-pt">Idiomas</div>
+      <div class="section-title lang-en">Languages</div>
+      <li class="lang-pt">
+        Português (Nativo) · Inglês (Fluente) · Espanhol (Intermediário)
+      </li>
+      <li class="lang-en">
+        Portuguese (Native) · English (Fluent) · Spanish (Intermediate)
+      </li>
+    </div>
+
+    <script>
+      function printPDF() {
+        window.print();
+      }
+
+      function toggleLang() {
+        document.body.classList.toggle("lang-active");
+      }
+      function toggleOnePage() {
+        document.body.classList.toggle("onepage");
+      }
+    </script>
+  </body>
+</html>
